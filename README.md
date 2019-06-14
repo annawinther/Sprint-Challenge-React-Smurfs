@@ -42,9 +42,10 @@ DELETE - is udes to remove oro delete data from the server
 
 - [ ] Mention three tools we can use to make AJAX requests.
 
-FETCH - JS's new method  
-.then() -
-.catch() - 
+FETCH API - comes from node.js and is a newer
+AXIOS - promised based HTTPclient for node.js and the browser
+JQUERY - a js library for manipluating the dom and making async calls
+
 
 
 
