@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
-import { Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 
 const smurfApi = 'http://localhost:3333/smurfs'
@@ -68,6 +68,18 @@ class App extends Component {
     // const { name, age, height } = this.state;
     return (
       <div className="App">
+      <Route
+        exacat
+        path='/'
+        render={props => 
+          <Smurfs 
+          {...props}
+          smurfs={this.state.smurfs} 
+          // handleSmurfData={this.handleSmurfData}
+          />}
+      />
+        
+     
         <SmurfForm 
           // name={name}
           // age={age}
@@ -75,10 +87,7 @@ class App extends Component {
           // handleSmurfData={this.handleSmurfData}
           // saveSmurfData={this.saveSmurfData}
         />
-        <Smurfs 
-        smurfs={this.state.smurfs} 
-        // handleSmurfData={this.handleSmurfData}
-        />
+        
       </div>
     );
   }
