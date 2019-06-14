@@ -13,6 +13,9 @@ class App extends Component {
     this.state = {
       smurfs: [],
       errorMessage: '',
+      // name: '',
+      // age: 0,
+      // height: '',
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -33,12 +36,43 @@ class App extends Component {
      } )
   }
 
-
+  // saveSmurfData = (event) => {
+  //   event.preventDefault();
+  //   const { name, age, height } = this.state;
+  //   if (name !== '' && age !== 0 && height !== ''){
+  //     const newSmurf = {
+  //       name: this.state.name,
+  //       age: this.state.age,
+  //       height: this.state.height,
+  //     };
+  //     axios
+  //       .get(smurfApi, newSmurf)
+  //       .then(response => {
+  //         this.setState({ 
+  //           smurfs: response.data,
+  //           name: '', 
+  //           age: 0,
+  //           height: '',
+  //           })
+  //       });
+  //   }
+  // }
+  // handleSmurfData = (data) => {
+  //   console.log(data, "data");
+  //   this.setState(({ smurfs: data}))
+  // }
 
   render() {
+    const { name, age, height } = this.state;
     return (
       <div className="App">
-        <SmurfForm />
+        <SmurfForm 
+          name={name}
+          age={age}
+          height={height}
+          handleInputChange={this.handleInputChange}
+          addSmurf={this.addSmurf}
+        />
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     );
