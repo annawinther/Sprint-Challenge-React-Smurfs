@@ -5,6 +5,14 @@ import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import { Route, NavLink } from 'react-router-dom';
 
+// const StyledNavbar = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-evenly;
+// `;
+// const StyledNavlink = styled.div`
+//   text-decoration: none;
+// `;
 
 const smurfApi = 'http://localhost:3333/smurfs'
 
@@ -68,20 +76,22 @@ class App extends Component {
     // const { name, age, height } = this.state;
     return (
       <div className="App">
-      <div className="nav-bar">
-        <NavLink 
-        className="smurfs"
-        to="/">
-          Home
-      </NavLink>
-      <NavLink 
-        className="add-smurf"
-        to="/smurf-form">
-          Add a new Smurf to the Village!
-      </NavLink>
-
-      </div>
-
+        <div className="nav-bar">
+          <div className="nav-link">
+            <NavLink 
+            className="smurfs"
+            to="/">
+              Home
+            </NavLink>
+          </div>
+          <div className="nav-link">
+            <NavLink 
+              className="smurfs"
+              to="/smurf-form">
+                Add a new Smurf to the Village!
+            </NavLink>
+          </div>
+        </div>
 
       <Route 
         path='/smurf-form'
@@ -91,8 +101,8 @@ class App extends Component {
           // name={name}
           // age={age}
           // height={height}
-          // handleSmurfData={this.handleSmurfData}
-          // saveSmurfData={this.saveSmurfData}
+          handleSmurfData={this.handleSmurfData}
+          addSmurf={this.addSmurf}
         />
         }
       />

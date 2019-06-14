@@ -1,3 +1,15 @@
 .App {
   text-align: center;
 }
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.smurfs{
+  text-decoration: none;
+  
+}
