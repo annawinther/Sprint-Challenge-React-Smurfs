@@ -45,35 +45,7 @@ class App extends Component {
      } )
   }
 
-  // saveSmurfData = (event) => {
-  //   event.preventDefault();
-  //   const { name, age, height } = this.state;
-  //     const newSmurf = {
-  //       name: this.state.name,
-  //       age: this.state.age,
-  //       height: this.state.height,
-  //     };
-  //     axios
-  //       .get(smurfApi, newSmurf)
-  //       .then(response => {
-  //         this.setState({ 
-  //           smurfs: response.data,
-  //           name: '', 
-  //           age: '',
-  //           height: '',
-  //           })
-  //       });
-  // }
-  // handleInputChange = e => {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
-  // handleSmurfData = (data) => {
-  //   console.log(data, "data");
-  //   this.setState(({ smurfs: data}))
-  // }
-
   render() {
-    // const { name, age, height } = this.state;
     return (
       <div className="App">
         <div className="nav-bar">
@@ -99,9 +71,6 @@ class App extends Component {
         render={props =>
           <SmurfForm 
           {...props}
-          // name={name}
-          // age={age}
-          // height={height}
           handleSmurfData={this.handleSmurfData}
           addSmurf={this.addSmurf}
         />

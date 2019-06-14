@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './SmurfForm.css'
 
 const smurfApi = 'http://localhost:3333/smurfs';
 
@@ -20,12 +21,11 @@ class SmurfForm extends Component {
     const newSmurf = {
       name: this.state.name,
       age: this.state.age,
-      height: this.state.height,
+      height: this.state.height + 'cm',
     };
     axios
       .post(smurfApi, newSmurf)
       .then(response => {
-        // console.log(response);
         this.setState({
           smurfs: response.data,
           name: "",
@@ -33,6 +33,7 @@ class SmurfForm extends Component {
           height: "",
         });
       })
+      window.location.pathname = "./smurfs"
   }
 
   handleInputChange = e => {
