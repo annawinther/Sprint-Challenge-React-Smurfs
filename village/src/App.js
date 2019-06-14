@@ -94,6 +94,7 @@ class App extends Component {
         </div>
 
       <Route 
+        exact
         path='/smurf-form'
         render={props =>
           <SmurfForm 
@@ -108,7 +109,7 @@ class App extends Component {
       />
 
       <Route
-      exacat
+      exact
       path='/'
       render={props => 
         <Smurfs 
