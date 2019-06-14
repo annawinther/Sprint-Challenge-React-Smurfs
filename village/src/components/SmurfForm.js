@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 const smurfApi = 'http://localhost:3333/smurfs';
 
@@ -14,7 +14,7 @@ class SmurfForm extends Component {
   }
 
   addSmurf = event => {
-    event.preventDefault();
+    // event.preventDefault();
     // add code to create the smurf using the api
     // const { name, age, height } = this.state;
     const newSmurf = {
@@ -22,16 +22,17 @@ class SmurfForm extends Component {
       age: this.state.age,
       height: this.state.height,
     };
-    Axios
-      .get(smurfApi, newSmurf)
-      .then(() => {
+    axios
+      .post(smurfApi, newSmurf)
+      .then(response => {
+        // console.log(response);
         this.setState({
-          name: '',
-          age: '',
-          height: ''
+          smurfs: response.data,
+          name: "",
+          age: "",
+          height: "",
         });
       })
-    
   }
 
   handleInputChange = e => {
@@ -39,31 +40,34 @@ class SmurfForm extends Component {
   };
 
   render() {
-    return (
-      <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
-          <input
-            onChange={this.handleInputChange}
-            placeholder="name"
-            value={this.state.name}
-            name="name"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="age"
-            value={this.state.age}
-            name="age"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="height"
-            value={this.state.height}
-            name="height"
-          />
-          <button type="submit" onClick={this.addSmurf}>Add to the village</button>
-        </form>
-      </div>
-    );
+// function SmurfForm ({ handleInputChange, saveSmurfData, name, age, height }){
+  return (
+    <div className="SmurfForm">
+      <form onSubmit={this.addSmurf}>
+        <input
+          onChange={this.handleInputChange}
+          placeholder="name"
+          value={this.state.name}
+          name="name"
+        />
+        <input
+          onChange={this.handleInputChange}
+          placeholder="age"
+          value={this.state.age}
+          name="age"
+        />
+        <input
+          onChange={this.handleInputChange}
+          placeholder="height"
+          value={this.state.height}
+          name="height"
+        />
+        <button type="submit"  >Add to the village</button>
+      </form>
+    </div>
+  );
+// }
+    
   }
 }
 

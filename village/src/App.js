@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import Router from 
 
 
 const smurfApi = 'http://localhost:3333/smurfs'
@@ -13,9 +14,9 @@ class App extends Component {
     this.state = {
       smurfs: [],
       errorMessage: '',
-      // name: '',
-      // age: 0,
-      // height: '',
+      name: '',
+      age: '',
+      height: '',
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -39,7 +40,6 @@ class App extends Component {
   // saveSmurfData = (event) => {
   //   event.preventDefault();
   //   const { name, age, height } = this.state;
-  //   if (name !== '' && age !== 0 && height !== ''){
   //     const newSmurf = {
   //       name: this.state.name,
   //       age: this.state.age,
@@ -51,29 +51,34 @@ class App extends Component {
   //         this.setState({ 
   //           smurfs: response.data,
   //           name: '', 
-  //           age: 0,
+  //           age: '',
   //           height: '',
   //           })
   //       });
-  //   }
   // }
+  // handleInputChange = e => {
+  //   this.setState({ [e.target.name]: e.target.value });
+  // };
   // handleSmurfData = (data) => {
   //   console.log(data, "data");
   //   this.setState(({ smurfs: data}))
   // }
 
   render() {
-    const { name, age, height } = this.state;
+    // const { name, age, height } = this.state;
     return (
       <div className="App">
         <SmurfForm 
-          name={name}
-          age={age}
-          height={height}
-          handleInputChange={this.handleInputChange}
-          addSmurf={this.addSmurf}
+          // name={name}
+          // age={age}
+          // height={height}
+          // handleSmurfData={this.handleSmurfData}
+          // saveSmurfData={this.saveSmurfData}
         />
-        <Smurfs smurfs={this.state.smurfs} />
+        <Smurfs 
+        smurfs={this.state.smurfs} 
+        // handleSmurfData={this.handleSmurfData}
+        />
       </div>
     );
   }
