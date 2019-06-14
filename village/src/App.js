@@ -68,25 +68,49 @@ class App extends Component {
     // const { name, age, height } = this.state;
     return (
       <div className="App">
-      <Route
-        exacat
-        path='/'
-        render={props => 
-          <Smurfs 
+      <div className="nav-bar">
+        <NavLink 
+        className="smurfs"
+        to="/">
+          Home
+      </NavLink>
+      <NavLink 
+        className="add-smurf"
+        to="/smurf-form">
+          Add a new Smurf to the Village!
+      </NavLink>
+
+      </div>
+
+
+      <Route 
+        path='/smurf-form'
+        render={props =>
+          <SmurfForm 
           {...props}
-          smurfs={this.state.smurfs} 
-          // handleSmurfData={this.handleSmurfData}
-          />}
-      />
-        
-     
-        <SmurfForm 
           // name={name}
           // age={age}
           // height={height}
           // handleSmurfData={this.handleSmurfData}
           // saveSmurfData={this.saveSmurfData}
         />
+        }
+      />
+
+      <Route
+      exacat
+      path='/'
+      render={props => 
+        <Smurfs 
+        {...props}
+        smurfs={this.state.smurfs} 
+        // handleSmurfData={this.handleSmurfData}
+        />}
+    />
+        
+
+     
+        
         
       </div>
     );
