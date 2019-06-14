@@ -42,7 +42,7 @@ DELETE - is udes to remove oro delete data from the server
 
 - [ ] Mention three tools we can use to make AJAX requests.
 
-FETCH API - comes from node.js and is a newer
+FETCH API - comes from node.js and provides a new api with a more powerful and flexible feature set 
 AXIOS - promised based HTTPclient for node.js and the browser
 JQUERY - a js library for manipluating the dom and making async calls
 
