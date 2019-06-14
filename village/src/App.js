@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
-import Router from 
+import { Route } from 'react-router-dom';
 
 
 const smurfApi = 'http://localhost:3333/smurfs'
