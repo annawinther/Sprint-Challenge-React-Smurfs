@@ -1,0 +1,12 @@
+.SmurfForm{
+   display: flex;
+   flex-direction: column;
+}
+.SmurfForm input {
+    padding-right: 20px;
+    height: 20px;
+}
+
+.SmurfForm button {
+    height: 25px;
+}
